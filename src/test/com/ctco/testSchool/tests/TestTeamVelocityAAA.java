@@ -27,4 +27,16 @@ public class TestTeamVelocityAAA {
         myTeam.sprintDays = 9;
         Assert.assertEquals("Sprint is 9 days long", 9.0, myTeam.getTeamVelocity(), 0.1);
     }
+
+    @Test
+    public void threeMembers() {
+        Member member1 = new Member();
+        member1.velocity = 0.5;
+        Member member2 = new Member();
+        Member member3 = new Member();
+        myTeam.addMember(member1);
+        myTeam.addMember(member2);
+        myTeam.addMember(member3);
+        Assert.assertEquals( 25, myTeam.getTeamVelocity(), 0.1);
+    }
 }
